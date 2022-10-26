@@ -3,13 +3,12 @@ import {Schema, model} from 'mongoose';
 import type {User} from '../user/model';
 
 export type Follow = {
-    _id: Types.ObjectId;
-    user: User;
+    follower: User;
     following: User;
 }
 
 const FollowSchema = new Schema<Follow>({
-    user: {
+    follower: {
         type: Schema.Types.ObjectId,
         required: true,
         ref: "User"

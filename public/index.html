@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="/scripts/freet.js"></script>
   <script src="/scripts/user.js"></script>
+  <script src="/scripts/follow.js"></script>
+  <script src="/scripts/like.js"></script>
+  <script src="/scripts/bookmark.js"></script>
   <script src="/scripts/index.js"></script>
 </head>
 
@@ -74,9 +77,9 @@
         </form>
 
         <form id="view-all-freets">
-            <h3>View All Freets</h3>
-            <input type="submit" value="View All Freets">
-          </form>
+          <h3>View All Freets</h3>
+          <input type="submit" value="View All Freets">
+        </form>
 
         <form id="view-freets-by-author">
           <h3>View Freets By Author</h3>
@@ -117,6 +120,126 @@
           </div>
           <input type="submit" value="Delete Freet">
         </form>
+
+        <form id="follow-user">
+          <h3>Follow User</h3>
+          <div>
+            <label for="username">User to Follow:</label>
+            <input id="username" name="username">
+          </div>
+          <input type="submit" value="Follow User">
+        </form>
+
+        <form id="unfollow-user">
+          <h3>Unfollow User</h3>
+          <div>
+            <label for="username">User to Unfollow:</label>
+            <input id="username" name="username">
+          </div>
+          <input type="submit" value="Unfollow User">
+        </form>
+
+        <form id="get-followers">
+          <h3>Get current followers</h3>
+          <input type="submit" value="Get followers">
+        </form>
+
+        <form id="get-following">
+          <h3>Get current following</h3>
+          <input type="submit" value="Get following">
+        </form>
+
+        <form id="get-users-feed">
+          <h3>Get Feed</h3>
+          <div>
+            <label for="filter">Keywords Separated by Commas:</label>
+            <input id="filter" name="filter">
+          </div>
+          <input type="submit" value="Get Feed">
+        </form>
+
+        <form id="like-freet">
+          <h3>Freet to Like</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <input type="submit" value="Like Freet">
+        </form>
+
+        <form id="unlike-freet">
+          <h3>Freet to Unlike</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <input type="submit" value="Unlike Freet">
+        </form>
+
+        <form id="get-likes">
+          <h3>Get Freet's Likes</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <input type="submit" value="Get Likes">
+        </form>
+
+        <form id="bookmark-freet">
+          <h3>Bookmark Freet</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <div>
+            <label for="category">Category:</label>
+            <input id="category" name="category">
+          </div>
+          <input type="submit" value="Bookmark Freet">
+        </form>
+
+        <form id="unbookmark-freet">
+          <h3>Unbookmark Freet</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <input type="submit" value="Unbookmark Freet">
+        </form>
+
+        <form id="move-bookmark-to-another-category">
+          <h3>Move Bookmark to Another Specified Category</h3>
+          <div>
+            <label for="freetId">ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <div>
+            <label for="category">Category:</label>
+            <input id="category" name="category">
+          </div>
+          <input type="submit" value="Move Freet">
+        </form>
+
+        <form id="get-all-bookmarks">
+          <h3>Get All Bookmarks</h3>
+          <input type="submit" value="Get All Bookmarks">
+        </form>
+
+        <form id="get-all-bookmark-categories">
+          <h3>Get All Bookmark Categories</h3>
+          <input type="submit" value="Get All Bookmark Categories">
+        </form>
+
+        <form id="get-bookmarks-in-category">
+          <h3>Get Bookmarks in Specified Category</h3>
+          <div>
+            <label for="category">Category:</label>
+            <input id="category" name="category">
+          </div>
+          <input type="submit" value="Get Bookmarks">
+        </form>
+        
+
       </div>
     </section>
     <section>

@@ -313,3 +313,136 @@ This renders the `index.html` file that will be used to interact with the backen
 **Throws**
 
 - `403` if the user is not logged in
+
+
+#### `POST /api/follow/:freetId?` - Follow User
+**Returns**
+- A success message
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the user to follow doesn't exist
+- `406` if the user tries to follow themselves
+
+#### `DELETE /api/unfollow/:freetId?` - Unfollow User
+**Returns**
+- A success message
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the user to follow doesn't exist
+- `406` if the user tries to unfollow themselves
+
+#### `GET /api/follow/followers` -  Get user's follower list
+**Returns**
+- A list of users that the follow the user
+
+**Throws**
+- `403` if the user is not logged in
+
+
+#### `GET /api/follow/following` -  Get user's following list
+**Returns**
+- A list of users that the user follows
+
+**Throws**
+- `403` if the user is not logged in
+
+
+#### `GET /api/follow/feed/:filter?` -  Get user's feed with provided filter
+**Returns**
+- A list of freets posted by users the user follows in which the content contains all of the keywords separated by commas from latest to earliest freet order
+
+**Throws**
+- `403` if the user is not logged in
+
+#### `POST /api/like/:freetId?` - Like a freet
+**Returns**
+- A success message
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+- `406` if the user tries to like a post they are already liking
+
+#### `DELETE /api/like/:freetId?` - Unlike a freet
+**Returns**
+- A success message
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+- `406` if the user tries to unlike a post they are aren't liking yet
+
+#### `GET /api/like/:freetId?` -  Get all users that like a freet
+**Returns**
+- A list of users that like a freet
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+
+
+
+
+
+#### `POST /api/bookmark/:freetId?/:category?` - Bookmark a freet
+**Returns**
+- A success message
+- An object with the freet content, author, ID, and category it was saved in
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+- `406` if the user tries to save a freet that was already bookmarked
+
+#### `DELETE /api/unbookmark/:freetId?` - Unbookmark a freet
+**Returns**
+- A success message
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+- `406` if the user tries to unsave a freet that hasn't been bookmarked yet
+
+
+#### `PUT /api/bookmark/:freetId?/:category?` - Move a bookmark from one category to another
+**Returns**
+- A success message
+- An object with the freet content, author, ID, and updated category
+
+**Throws**
+- `403` if the user is not logged in
+- `404` if the freet doesn't exist
+- `406` if the user tries to move a freet that hasn't been bookmarked yet
+
+
+
+#### `GET /api/bookmark` - Get all bookmarks
+
+**Returns**
+
+- An array of all bookmarked freets sorted in descending order by date saved
+
+**Throws**
+- `403` if the user is not logged in 
+
+#### `GET /api/bookmark?category=CATEGORY` - Get bookmarks in a specified category
+
+**Returns**
+
+- An array of freets created by user with category `CATEGORY`
+
+**Throws**
+
+- `403` if the user is not logged in 
+
+#### `GET /api/bookmark/categories` - Get freets by author
+
+**Returns**
+
+- An array of bookmark categories
+
+**Throws**
+
+- `403` if the user is not logged in 
